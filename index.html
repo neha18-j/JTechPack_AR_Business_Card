@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JTechPack AR Business Card</title>
+    <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/jeromeetienne/AR.js/aframe/build/aframe-ar.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body style="margin: 0; overflow: hidden;">
+    
+    <!-- AR Scene -->
+    <a-scene embedded arjs>
+        <!-- Marker for Image Recognition -->
+        <a-marker preset="custom" type="pattern" url="pattern-marker.patt">
+            <!-- 3D Box Model (JTechPack Product) -->
+            <a-box position="0 0.5 0" material="color: brown;"></a-box>
+            
+            <!-- Floating Text -->
+            <a-text value="JTechPack AR Business Card" position="-1 1 0" scale="1 1 1" color="white"></a-text>
+        </a-marker>
+        <a-plane position="0 -0.2 0" width="1" height="0.4" material="color: blue" onclick="window.open('https://www.indiamart.com/jtechpack', '_blank');">
+            <a-text value="Order Now" align="center" position="0 0 0.1" color="white"></a-text>
+        </a-plane>
+        
+        <a-plane position="0 -0.6 0" width="1" height="0.4" material="color: green" onclick="window.open('tel:+911234567890');">
+            <a-text value="Contact Now" align="center" position="0 0 0.1" color="white"></a-text>
+        </a-plane>
+        
+        
+        <a-entity camera></a-entity>
+    </a-scene>
+
+</body>
+</html>
